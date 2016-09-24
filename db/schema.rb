@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924205822) do
+ActiveRecord::Schema.define(version: 20160924232212) do
+
+  create_table "attributes", force: :cascade do |t|
+    t.string   "eav_type"
+    t.integer  "eav_id"
+    t.string   "attr"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eav_type", "eav_id"], name: "index_attributes_on_eav_type_and_eav_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

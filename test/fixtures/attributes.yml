@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eav: one
+  eav_type: Eav
+  attribute: MyString
+  value: MyString
+
+two:
+  eav: two
+  eav_type: Eav
+  attribute: MyString
+  value: MyString

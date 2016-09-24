@@ -1,17 +1,2 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Model name:</strong>
-  <%= @product.model_name %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @product.slug %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
-
+<%= render @product, full: true %>
