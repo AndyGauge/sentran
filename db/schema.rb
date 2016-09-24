@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924232212) do
+ActiveRecord::Schema.define(version: 20160924235751) do
 
   create_table "attributes", force: :cascade do |t|
     t.string   "eav_type"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160924232212) do
     t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["attr"], name: "index_attributes_on_attr"
     t.index ["eav_type", "eav_id"], name: "index_attributes_on_eav_type_and_eav_id"
   end
 
@@ -40,6 +41,15 @@ ActiveRecord::Schema.define(version: 20160924232212) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "parts", force: :cascade do |t|
+    t.integer  "product_id"
+    t.string   "number"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_parts_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
