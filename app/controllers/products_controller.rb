@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   before_action :set_category
+  defaults resource_class: Product.friendly
 
   # GET /products
   def index

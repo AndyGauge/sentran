@@ -1,4 +1,6 @@
-<%= link_to product.name, category_product_url(product.category, product) %>
 <% if local_assigns[:full] %>
+  <%= link_to product.name, category_product_parts_url(product.category, product) %>
   <%= render product.product_attributes %>
+<% else %>
+  <%= link_to product.name, category_product_url(product.category, product) %>
 <% end %>
